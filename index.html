@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Music Quiz</title>
+  </head>
+  <body>
+    <h1 class="quiz__header">Music Quiz</h1>
+    <section class="quiz__wrapper">
+      <fieldset class="difficulty__container" id="quiz-difficulty-fieldset">
+        <h2 class="difficulty__header">Select Difficulty</h2>
+        <input class="difficulty__input" type="radio" id="difficulty_control_1" name="difficulty" value="easy"/>
+        <label class="difficulty__input-label" for="difficulty_control_1">Easy</label>
+        <input class="difficulty__input" type="radio" id="difficulty_control_2" name="difficulty" value="medium"/>
+        <label class="difficulty__input-label" for="difficulty_control_2">Medium</label>
+        <input class="difficulty__input" type="radio" id="difficulty_control_3" name="difficulty" value="hard"/>
+        <label class="difficulty__input-label" for="difficulty_control_3">Hard</label>
+        <input id="quiz-start-button" class="difficulty__button button" type="submit" value="Start" role="button" aria-label="Start Quiz"/>
+        <p class="difficulty__error-message hidden">Please choose your difficulty</p>
+        <div class="quiz-rules">
+          <h2 class="quiz-rules__header">Quiz Rules</h2>
+          <ul class="quiz-rules__list" aria-labelledby="quiz-rules__header">
+            <li class="quiz-rules__list-item">You only have 20 seconds per questions</li>
+            <li class="quiz-rules__list-item">
+              If time has ran out and you have an answer selected, that answer
+              will be submitted
+            </li>
+            <li class="quiz-rules__list-item">Once the quiz starts, you cannot exit the quiz</li>
+            <li class="quiz-rules__list-item">You get points based on how many questions you get correct</li>
+            <li class="quiz-rules__list-item">Have fun 🎉</li>
+          </ul>
+        </div>
+      </fieldset>
+      <div class="quiz__container hidden">
+        <div class="quiz-status">
+          <div class="quiz-status__progress-bar">
+            <div class="quiz-status__progress-bar-fill"></div>
+            <span class="quiz-status__score">0/5 Correct</span>
+            <span class="quiz-status__progress-text">1 of 5 Questions</span>
+          </div>
+          <div class="quiz-status__timer">
+            <span class="quiz-status__timer-text">Time Left: 20</span></span>
+          </div>
+        </div>
+        <fieldset id="quiz-fieldset" class="quiz__questions-container">
+          <h2 class="quiz__question"></h2>
+          <div class="quiz__answers-container">
+            <div class="quiz__input-group">
+              <input class="quiz__input" type="radio" id="quiz_control_1" name="answer"/>
+              <label class="quiz__input-label" for="quiz_control_1"></label>
+            </div>
+            <div class="quiz__input-group">
+              <input class="quiz__input" type="radio" id="quiz_control_2" name="answer"/>
+              <label class="quiz__input-label" for="quiz_control_2"></label>
+            </div>
+            <div class="quiz__input-group">
+              <input class="quiz__input" type="radio" id="quiz_control_3" name="answer"/>
+              <label class="quiz__input-label" for="quiz_control_3"></label>
+            </div>
+            <div class="quiz__input-group">
+              <input class="quiz__input" type="radio" id="quiz_control_4" name="answer"/>
+              <label class="quiz__input-label" for="quiz_control_4"></label>
+            </div>
+          </div>
+          <div class="quiz__submit-button-group">
+            <input id="quiz-submit-button" class="quiz__button button hidden" type="submit" value="Submit" role="button" aria-label="Submit Answer"/>
+            <input id="quiz-next-button" class="quiz__button button hidden" type="submit" value="Next" role="button" aria-label="Next Questions"/>
+            <input id="quiz-results-button" class="quiz__button button hidden" type="submit" value="Results" role="button" aria-label="Get Results"/>
+          </div>
+        </fieldset>
+      </div>
+      <div class="results__container hidden">
+        <h2 class="results__header">You've compelted the quiz!</h2>
+        <p class="results__score-message"></p>
+        <button id="quiz-restart-button" class="button" role="button" aria-label="Restart Quiz">Restart</button>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>
